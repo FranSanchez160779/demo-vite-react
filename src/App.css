@@ -1,3 +1,6 @@
+//*
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +42,45 @@
 
 .read-the-docs {
   color: #888;
+}
+/* App.css */
+
+body, html {
+  height: 100%; /* Asegura que el cuerpo y la raíz del documento ocupen el 100% de la altura de la ventana */
+  margin: 0; /* Eliminar el margen por defecto */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  background-color: white; /* Establece el fondo blanco */
+}
+
+.game {
+  text-align: center; /* Centra el contenido dentro del contenedor de la aplicación */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una ligera sombra para resaltar el contenido */
+  padding: 20px; /* Agrega algo de relleno para que no esté tan pegado a los bordes */
+  border-radius: 10px; /* Agrega bordes redondeados */
+  background-color: white; /* Asegura que el fondo del juego sea blanco */
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crear 3 columnas iguales para el tablero */
+  gap: 10px; /* Espacio entre los cuadrados */
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square:hover {
+  background-color: #e0e0e0;
 }
