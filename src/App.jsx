@@ -8,6 +8,12 @@ function Square({ value, onSquareClick }) {
   );
 }
 
+Square.propTypes = {
+  value: PropTypes.string,          // 'value' debe ser un string
+  onSquareClick: PropTypes.func,    // 'onSquareClick' debe ser una función
+};
+
+
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
