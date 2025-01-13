@@ -90,7 +90,7 @@ export default function Game() {
   const moves = history.map((_, move) => {
     const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
     return (
-      <li key={`move-${move}`}>
+      <li key={`move-${move}-${description}`}>  {/* Concatenamos una cadena para hacer la clave aún más única */}
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
