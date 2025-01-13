@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types'; // Importa PropTypes para validación de props
 
 // Componente Square: Representa un cuadrado del tablero
-function Square({ value, onSquareClick }) {
+function Square({ value, onSquareClick, id }) {
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button className="square" onClick={onSquareClick} key={id}>
       {value}
     </button>
   );
@@ -14,6 +14,7 @@ function Square({ value, onSquareClick }) {
 Square.propTypes = {
   value: PropTypes.string, // El valor debe ser un string
   onSquareClick: PropTypes.func.isRequired, // La función es requerida
+  id: PropTypes.string.isRequired, // Añadimos 'id' para evitar el uso del índice como key
 };
 
 // Componente Board: Representa el tablero de juego
@@ -43,12 +44,14 @@ function Board({ xIsNext, squares, onPlay }) {
     <>
       <div className="status">{status}</div>
       {[0, 3, 6].map((row) => (
-        <div className="board-row" key={row}>
+        <div className="board-row" key={`row-${row}`}>
           {squares.slice(row, row + 3).map((value, col) => (
+            // Asignamos una clave única para cada celda
             <Square
-              key={row + col}
+              key={`square-${row}-${col}`} // Clave única por fila y columna
               value={value}
               onSquareClick={() => handleClick(row + col)}
+              id={`square-${row}-${col}`} // Identificador único para cada cuadrado
             />
           ))}
         </div>
