@@ -1,7 +1,5 @@
-// App.jsx
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'; // Importa PropTypes para validación de props
-import './App.css'; // Asegúrate de importar el archivo de estilo CSS
 
 // Componente Square: Representa un cuadrado del tablero
 function Square({ value, onSquareClick, id }) {
@@ -48,6 +46,7 @@ function Board({ xIsNext, squares, onPlay }) {
       {[0, 3, 6].map((row) => (
         <div className="board-row" key={`row-${row}`}>
           {squares.slice(row, row + 3).map((value, col) => (
+            // Asignamos una clave única para cada celda
             <Square
               key={`square-${row}-${col}`} // Clave única por fila y columna
               value={value}
@@ -91,7 +90,7 @@ export default function Game() {
   const moves = history.map((_, move) => {
     const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
     return (
-      <li key={`move-${move}-${description}`}>
+       <li key={`move-${currentMove}-${description}`}>
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );

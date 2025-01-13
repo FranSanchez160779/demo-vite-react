@@ -1,39 +1,42 @@
-body, html {
-  height: 100%; /* Asegura que el cuerpo y la raíz del documento ocupen el 100% de la altura de la ventana */
-  margin: 0; /* Eliminar el margen por defecto */
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  background-color: white; /* Establece el fondo blanco */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.game {
-  text-align: center; /* Centra el contenido dentro del contenedor de la aplicación */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una ligera sombra para resaltar el contenido */
-  padding: 20px; /* Agrega algo de relleno para que no esté tan pegado a los bordes */
-  border-radius: 10px; /* Agrega bordes redondeados */
-  background-color: white; /* Asegura que el fondo del juego sea blanco */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.game-board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Crear 3 columnas iguales para el tablero */
-  gap: 10px; /* Espacio entre los cuadrados */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.square {
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.square:hover {
-  background-color: #e0e0e0;
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
