@@ -30,9 +30,14 @@ function Board({ xIsNext, squares, onPlay }) {
 
   // Determinar el estado del juego
   const winner = calculateWinner(squares);
-  const status = winner
-    ? `Winner: ${winner}`
-    : `Next player: ${xIsNext ? 'X' : 'O'}`;
+  let status;
+
+  if (winner) {
+    status = `Winner: ${winner}`;
+  } else {
+    const nextPlayer = xIsNext ? 'X' : 'O';
+    status = `Next player: ${nextPlayer}`;
+  }
 
   return (
     <>
@@ -82,7 +87,7 @@ export default function Game() {
   const moves = history.map((_, move) => {
     const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
     return (
-      <li key={move}>
+      <li key={`move-${move}`}>
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
