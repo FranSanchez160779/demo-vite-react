@@ -43,21 +43,24 @@ function Board({ xIsNext, squares, onPlay }) {
   return (
     <>
       <div className="status">{status}</div>
-      {[0, 3, 6].map((row) => (
-        <div className="board-row" key={`row-${row}`}>
-          {squares.slice(row, row + 3).map((value, col) => (
-            // Asignamos una clave única para cada celda
-            <Square
-              key={`square-${row}-${col}`} // Clave única por fila y columna
-              value={value}
-              onSquareClick={() => handleClick(row + col)}
-              id={`square-${row}-${col}`} // Identificador único para cada cuadrado
-            />
-          ))}
-        </div>
-      ))}
+      <div className="board-row">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
     </>
   );
+}
 }
 
 // Validación de props para Board
