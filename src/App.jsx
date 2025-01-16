@@ -61,7 +61,6 @@ function Board({ xIsNext, squares, onPlay }) {
     </>
   );
 }
-}
 
 // Validación de props para Board
 Board.propTypes = {
