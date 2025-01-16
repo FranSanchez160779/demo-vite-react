@@ -1,5 +1,78 @@
-* {
-padding: 0;
-margin: 0;
-box-sizing:border-box
+/* index.css */
+
+/* Estilo global para centrar todo */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9; /* Fondo claro */
+}
+
+/* Contenedor principal del juego */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espaciado entre el tablero y la información */
+}
+
+/* Tablero del juego */
+.board-row {
+  display: flex;
+}
+
+/* Botones cuadrados */
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 2px solid #555;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.square:hover {
+  background-color: #ddd; /* Efecto hover */
+}
+
+/* Información del juego */
+.game-info {
+  text-align: center;
+}
+
+.game-info ol {
+  padding: 0;
+  list-style: none;
+}
+
+.game-info li {
+  margin: 5px 0;
+}
+
+.game-info button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #555;
+  background-color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.game-info button:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Estado del juego */
+.status {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
